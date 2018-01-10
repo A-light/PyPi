@@ -43,19 +43,23 @@ new_jsjm=[]
 #distance=[]
 new_jsjm=[sorted(set(item)) for item in jsjm]
 #print(distance)
-print([item[0:3] for item in new_jsjm])
-print(new_jsjm)
+#print([item[0:3] for item in new_jsjm])
+#print(new_jsjm)
 names2=["james2.txt","mikey2.txt","julie2.txt","sarah2.txt"]
 jsjm2=[]
 for name in names2:
 	times=[]
-	times=[santize(item) for item in fileTolist(name)]
+	times=[item for item in fileTolist(name)]
 	jsjm2.append(times)
 print(jsjm2)
-name_data={}
+name_data=[]
 for item in jsjm2:
+	data={}
+	#print(item)
 	data['Name']=item.pop(0)
 	data['DOB']=item.pop(0)
-	data['Times']=item
-	name_data.append(data)
+	data['Times']=[str(sorted(set(santize(it) for it in item))[0:3])] #去重，排序
+ 	name_data.append(data)
 print(name_data)
+for it in name_data:
+	print(it['Name'],it('Times')
