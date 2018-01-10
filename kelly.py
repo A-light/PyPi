@@ -58,8 +58,6 @@ for item in jsjm2:
 	#print(item)
 	data['Name']=item.pop(0)
 	data['DOB']=item.pop(0)
-	data['Times']=[str(sorted(set(santize(it) for it in item))[0:3])] #去重，排序
- 	name_data.append(data)
+	data['Times']=sorted(set(santize(it) for it in item))[0:3] #去重，排序
+	name_data.append(data)
 print(name_data)
-for it in name_data:
-	print(it['Name'],it('Times')
