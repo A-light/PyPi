@@ -54,9 +54,9 @@ print(df.sub(s1,axis='index'))
 df.apply(np.cumsum);
 df.apply(lambda x:x.max()-x.min())
 s2=pd.Series(np.random.randint(0,7,size=10))
-print(s2.value_counts()
-s=pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat']);
-print(s.str.lower());
+print(s2.value_counts())
+s3=pd.Series(['A', 'B', 'C', 'Aaba', 'Baca', np.nan, 'CABA', 'dog', 'cat']);
+print(s3.str.lower());
 df3=pd.DataFrame(np.random.randn(10,4));
 pieces = [df3[:3], df3[3:7], df3[7:]]
 print(pd.concat(pieces))
@@ -67,4 +67,6 @@ pd.merge(left, right, on='key')
 df4=pd.DataFrame(np.random.randn(8,4),columns=['A','B','C','D'])
 ts=pd.Series(np.random.randn(1000),index=pd.date_range('1/1/2000',periods=1000))
 ts=ts.cumsum()
+plt.figure();
 ts.plot();
+plt.show()
